@@ -31,6 +31,12 @@ class SketchPad {
     this.#addEventListeners();
   }
 
+  reset() {
+    this.paths = [];
+    this.isDrawing = false;
+    this.#redraw();
+  }
+
   #addEventListeners() {
     if (!this.canvas) {
       return;

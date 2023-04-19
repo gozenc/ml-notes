@@ -28,6 +28,11 @@ class SketchPad {
         __classPrivateFieldGet(this, _SketchPad_instances, "m", _SketchPad_redraw).call(this);
         __classPrivateFieldGet(this, _SketchPad_instances, "m", _SketchPad_addEventListeners).call(this);
     }
+    reset() {
+        this.paths = [];
+        this.isDrawing = false;
+        __classPrivateFieldGet(this, _SketchPad_instances, "m", _SketchPad_redraw).call(this);
+    }
 }
 _SketchPad_instances = new WeakSet(), _SketchPad_addEventListeners = function _SketchPad_addEventListeners() {
     if (!this.canvas) {
