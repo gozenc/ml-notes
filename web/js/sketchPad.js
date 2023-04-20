@@ -51,7 +51,7 @@ _SketchPad_instances = new WeakSet(), _SketchPad_addEventListeners = function _S
             __classPrivateFieldGet(this, _SketchPad_instances, "m", _SketchPad_redraw).call(this);
         }
     };
-    this.canvas.onmouseup = () => (this.isDrawing = false);
+    document.onmouseup = () => (this.isDrawing = false);
     this.canvas.ontouchstart = (evt) => {
         const loc = evt.touches[0];
         // @ts-ignore
@@ -62,9 +62,9 @@ _SketchPad_instances = new WeakSet(), _SketchPad_addEventListeners = function _S
         // @ts-ignore
         this.canvas.onmousemove(loc);
     };
-    this.canvas.ontouchend = () => {
+    document.ontouchend = () => {
         // @ts-ignore
-        this.canvas.onmouseup();
+        document.onmouseup();
     };
     this.undoBtn.onclick = () => {
         this.paths.pop();
